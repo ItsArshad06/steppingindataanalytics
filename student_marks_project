@@ -1,0 +1,24 @@
+this is the  code of python to sort marks of students  by analysing  all the data followed by code,used panda and matplotlib have been used for charts and data analysis..
+import pandas as pd
+
+# Step 1: Create dataset
+data = {
+    "Name": ["Arshad", "Rahul", "Sneha", "Aditi", "Mohit"],
+    "Maths": [85, 92, 78, 88, 95],
+    "Science": [80, 89, 90, 85, 87],
+    "English": [75, 95, 88, 82, 90]
+}
+
+df = pd.DataFrame(data)
+
+# Step 2: Calculate total marks
+df["Total"] = df["Maths"] + df["Science"] + df["English"]
+
+# Step 3: Find the topper
+topper = df.loc[df["Total"].idxmax()]
+
+# Step 4: Print results
+print("Student Marks Table:\n", df)
+print("\nTopper Details:")
+print("Name:", topper["Name"])
+print("Total Marks:", topper["Total"])
